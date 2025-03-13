@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game-Style Presentation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game-style HUD/menu -->
+        <div class="game-hud">
+            <div class="hud-item health">
+                <i class="fas fa-heart"></i>
+                <div class="health-bar">
+                    <div class="health-fill"></div>
+                </div>
+            </div>
+            <div class="hud-item progress">
+                <span class="level">Level: <span id="current-level">1</span> / <span id="max-level">5</span></span>
+            </div>
+            <div class="hud-item score">
+                <i class="fas fa-star"></i> <span id="score">0</span>
+            </div>
+        </div>
+
+        <!-- Map navigation -->
+        <div class="map-nav">
+            <div class="map-title">Navigation Map</div>
+            <div class="map-grid">
+                <div class="map-node intro active" data-section="intro">Start</div>
+                <div class="map-path"></div>
+                <div class="map-node section1" data-section="section1">1</div>
+                <div class="map-path"></div>
+                <div class="map-node section2" data-section="section2">2</div>
+                <div class="map-path"></div>
+                <div class="map-node section3" data-section="section3">3</div>
+                <div class="map-path"></div>
+                <div class="map-node section4" data-section="section4">4</div>
+                <div class="map-path"></div>
+                <div class="map-node conclusion" data-section="conclusion">End</div>
+            </div>
+        </div>
+
+        <!-- Game sections -->
+        <div class="game-world">
+            <section id="intro" class="section active">
+                <div class="section-content">
+                    <h1>Welcome to LYNX Interactive Presentation</h1>
+                    <p>Navigate through sections like you're playing a game!</p>
+                    <div class="achievement">
+                        <i class="fas fa-trophy"></i> Achievement Unlocked: Presentation Started!
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button next" data-target="section1">Start Journey <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section1" class="section">
+                <div class="section-content">
+                    <h1>Section 1: Your First Point</h1>
+                    <div class="content-box">
+                        <h2><i class="fas fa-lightbulb"></i> Key Concept</h2>
+                        <p>This is where you introduce your first major point. Add your content here.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Feature point one</li>
+                            <li><i class="fas fa-check-circle"></i> Feature point two</li>
+                            <li><i class="fas fa-check-circle"></i> Feature point three</li>
+                        </ul>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev" data-target="intro"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="nav-button next" data-target="section2">Continue <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section2" class="section">
+                <div class="section-content">
+                    <h1>Section 2: Your Second Point</h1>
+                    <div class="content-box">
+                        <h2><i class="fas fa-chart-line"></i> Progress</h2>
+                        <p>Expand on your ideas further in this section. Present your second major point.</p>
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Your image or chart here</p>
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev" data-target="section1"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="nav-button next" data-target="section3">Continue <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section3" class="section">
+                <div class="section-content">
+                    <h1>Section 3: Interactive Elements</h1>
+                    <div class="content-box">
+                        <h2><i class="fas fa-gamepad"></i> Engage</h2>
+                        <p>This section demonstrates interactive elements to engage your audience.</p>
+                        <div class="interactive-element">
+                            <button id="bonus-btn" class="bonus-button">Click for Bonus Points!</button>
+                            <span id="bonus-msg" class="bonus-message">+100 points!</span>
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev" data-target="section2"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="nav-button next" data-target="section4">Continue <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section4" class="section">
+                <div class="section-content">
+                    <h1>Section 4: Final Points</h1>
+                    <div class="content-box">
+                        <h2><i class="fas fa-flag-checkered"></i> Almost There</h2>
+                        <p>Present your final arguments or information before the conclusion.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%">80% Complete</div>
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev" data-target="section3"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="nav-button next" data-target="conclusion">Finish <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conclusion" class="section">
+                <div class="section-content">
+                    <h1>Conclusion: Journey Complete!</h1>
+                    <div class="content-box conclusion-box">
+                        <h2><i class="fas fa-medal"></i> Congratulations!</h2>
+                        <p>You've completed the entire presentation. Here's a summary of key points:</p>
+                        <ul class="summary-list">
+                            <li>Summary point one</li>
+                            <li>Summary point two</li>
+                            <li>Summary point three</li>
+                        </ul>
+                        <div class="final-score">
+                            <h3>Final Score: <span id="final-score">0</span></h3>
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev" data-target="section4"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="nav-button reset" data-target="intro">Restart <i class="fas fa-redo"></i></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Game controls -->
+        <div class="game-controls">
+            <div class="control-button" id="help-button">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <div class="control-button" id="sound-button">
+                <i class="fas fa-volume-up"></i>
+            </div>
+            <div class="control-button" id="fullscreen-button">
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <!-- Help modal -->
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>How to Navigate</h2>
+                <p>This is a game-style presentation. Use the navigation buttons to move between sections.</p>
+                <p>You can also click directly on the map nodes to jump to a section.</p>
+                <p>Collect points by interacting with elements and completing sections!</p>
+                <p>Keyboard shortcuts:</p>
+                <ul>
+                    <li><strong>Left Arrow:</strong> Previous section</li>
+                    <li><strong>Right Arrow:</strong> Next section</li>
+                    <li><strong>H:</strong> Toggle help</li>
+                    <li><strong>M:</strong> Toggle sound</li>
+                    <li><strong>F:</strong> Toggle fullscreen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
